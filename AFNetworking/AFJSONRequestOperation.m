@@ -118,7 +118,7 @@ static dispatch_queue_t json_request_operation_processing_queue() {
 - (void)setCompletionBlockWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    self.completionBlock = ^ {
+    self.completionBlock = [[^{
         if ([self isCancelled]) {
             return;
         }
@@ -148,7 +148,7 @@ static dispatch_queue_t json_request_operation_processing_queue() {
                 }
             });
         }
-    };    
+    } copy] autorelease];
 }
 
 @end
