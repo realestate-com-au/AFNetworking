@@ -1,0 +1,5 @@
+SKIP_INSTALL = YES
+DSTROOT = /tmp/AFNetworking.dst
+PRODUCT_NAME = AFNetworking
+PUBLIC_HEADERS_FOLDER_PATH = ../../Headers/${PRODUCT_NAME}
+GCC_PREFIX_HEADER = src/AFNetworking-Prefix.pch
