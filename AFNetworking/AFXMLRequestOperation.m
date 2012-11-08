@@ -55,7 +55,7 @@ static dispatch_queue_t xml_request_operation_processing_queue() {
                                                         success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSXMLParser *XMLParser))success
                                                         failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, NSXMLParser *XMLParser))failure
 {
-    AFXMLRequestOperation *requestOperation = [[[self alloc] initWithRequest:urlRequest] autorelease];
+    AFXMLRequestOperation *requestOperation = [[[AFXMLRequestOperation alloc] initWithRequest:urlRequest] autorelease];
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success(operation.request, operation.response, responseObject);

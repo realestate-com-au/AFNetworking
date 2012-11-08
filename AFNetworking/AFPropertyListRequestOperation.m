@@ -50,7 +50,7 @@ static dispatch_queue_t property_list_request_operation_processing_queue() {
                                                                     success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, id propertyList))success
                                                                     failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id propertyList))failure
 {
-    AFPropertyListRequestOperation *requestOperation = [[[self alloc] initWithRequest:request] autorelease];
+    AFPropertyListRequestOperation *requestOperation = [[[AFPropertyListRequestOperation alloc] initWithRequest:request] autorelease];
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success(operation.request, operation.response, responseObject);
