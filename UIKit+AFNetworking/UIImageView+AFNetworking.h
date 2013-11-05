@@ -28,8 +28,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AFURLResponseSerialization.h"
-
 @protocol AFImageCache;
 
 /**
